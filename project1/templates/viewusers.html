@@ -1,0 +1,34 @@
+<html>
+  <center>
+    <body>
+      <table class="table table-striped table-bordered table-sm">
+        <thead class="thead-dark">
+          <tr>
+            <th>User ID</th>
+            <th>User Name</th>
+            <th>User Email</th>
+            <th>User Contact</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for us in userdata %}
+          <tr>
+            <td>{{ us.uid }}</td>
+            <td>{{ us.uname }}</td>
+            <td>{{ us.uemail }}</td>
+            <td>{{ us.ucontact }}</td>
+            <td>
+              <a href="/deleteprofile/{{us.uid}}"> Delete</a>
+            </td>
+            <td>
+              <a href="/editprofile/{{us.uid}}">   Edit</a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <a href="{% url 'home' %}">Back to Home</a>
+    </body>
+  </center>
+</html>

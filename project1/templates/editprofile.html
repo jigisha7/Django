@@ -1,0 +1,16 @@
+<html>
+    <body>
+        <center>
+            <form method="POST" action="/updateprofile/{{user.uid}}/">
+                {% csrf_token %}
+                    <h3>Update Details</h3>
+                    <h1>Edit Profile for {{ user.username }}</h1><br>
+                    <input type="text" name="uid" id="uid" required maxlength="20" value="{{ user.uid }}"/><br>
+                    <input type="text" name="uname" id="uname" required maxlength="100" value="{{ user.uname }}"/><br>
+                    <input type="email" name="uemail" id="uemail" required maxlength="254" value="{{ user.uemail }}"/><br>
+                    <input type="text" name="ucontact" id="ucontact" required maxlength="15" value="{{ user.ucontact }}"/><br>
+                    <button type="submit" class="btn btn-success">Update</button>
+            </form>
+        </center>
+    </body>
+</html>
